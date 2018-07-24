@@ -5,6 +5,9 @@ class Book extends Component {
         let bookThumbnail = this.props.book.imageLinks ? 
         this.props.book.imageLinks.thumbnail : '';
 
+        let shelf = this.props.book.shelf ? 
+        this.props.book.shelf : 'none';
+
         return (
             <div className="book">
             <div className="book-top">
@@ -13,7 +16,7 @@ class Book extends Component {
                 <select 
                     onChange={(e) => this.props.moveBook(
                         this.props.book, e.target.value
-                    )} value={this.props.book.shelf}
+                    )} value={shelf}
                     >
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>

@@ -32,6 +32,7 @@ class SearchPage extends Component {
 
 
     render() {
+        console.log(this.searchResults);
         return (
           <div className="search-books">
             <div className="search-books-bar">
@@ -58,11 +59,12 @@ class SearchPage extends Component {
                   this.state.searchResults.map(searchResults => (
                     <li key={searchResults.id}>
                       {searchResults.title}
-                      <Book book={searchResults} />
+                      <Book book={searchResults} moveBook={this.props.moveBook} />
 
                     </li>
 
                   ))
+                  
                 }
 
               </ol>
