@@ -15,8 +15,19 @@ class App extends Component {
       this.setState({ books: books })
     })
   }
- 
-    
+
+   moveBook = (book, shelf) => {
+      BooksAPI.update(book, shelf)
+      .then(
+        BooksAPI.getAll().then((books) => {
+          this.setState({ books: books })
+        })
+
+      )
+      
+
+  }
+   
 
   render() {
 
@@ -27,7 +38,7 @@ class App extends Component {
       <div>
           <h1>My Books</h1>
           <h2>An interactive Bookshelf</h2>
-          <MainPage books={this.state.books}/>
+          <MainPage books={this.state.books} moveBook={this.moveBook}/>
           <SearchPage  />
       </div>
     );

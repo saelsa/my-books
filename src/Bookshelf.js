@@ -15,7 +15,7 @@ class Bookshelf extends Component {
                         (this.props.filteredBooks !== undefined && this.props.filteredBooks.length > 0) &&
                         this.props.filteredBooks.map(book => (
                           <li key={book.id}>
-                          <Book book={book} />
+                          <Book book={book} moveBook={this.props.moveBook}/>
                           </li>
                         ))
                       }
