@@ -22,7 +22,6 @@ class App extends Component {
         BooksAPI.getAll().then((books) => {
           this.setState({ books: books })
         })
-
       )
       
 
@@ -38,7 +37,7 @@ class App extends Component {
       <div>
           <h1>My Books</h1>
           <h2>An interactive Bookshelf</h2>
-          <MainPage books={this.state.books} moveBook={this.moveBook}/>
+          {/* <MainPage books={this.state.books} moveBook={this.moveBook}/> */}
           <SearchPage  />
       </div>
     );
