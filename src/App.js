@@ -25,6 +25,9 @@ class App extends Component {
   };
 
   render() {
+
+    console.log(this.state.books);
+
     return (
       <div>
         <Route
@@ -37,7 +40,7 @@ class App extends Component {
         <Route
           exact
           path="/search"
-          render={() => <SearchPage moveBook={this.moveBook} />}
+          render={() => <SearchPage books={this.state.books} moveBook={this.moveBook} />}
         />
       </div>
     );
